@@ -8,7 +8,8 @@ import google.generativeai as genai
 from PIL import Image
 
 # Configure the API key
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+api_key = st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key=api_key)
 
 # Function to get response from Gemini API
 model=genai.GenerativeModel('gemini-1.5-flash')
